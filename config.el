@@ -23,8 +23,8 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 (setq default-input-method "korean-hangul")
 (if IS-MAC
-    (setq doom-font (font-spec :family "D2Coding Nerd Font" :size 13))
-    (setq doom-font (font-spec :family "D2Coding Nerd Font" :size 20))
+    (setq doom-font (font-spec :family "Hack Nerd Font" :size 13))
+    (setq doom-font (font-spec :family "Hack Nerd Font" :size 20))
     )
 
 
@@ -68,8 +68,6 @@
 
 ;; Terminal setup
 (setq xterm-extra-capabilities '(setSelection))
-
-(load-file-from-doomdir "config_work")
 
 ;; vterm directory tracking
 (after! vterm

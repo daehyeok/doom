@@ -55,7 +55,7 @@
        hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        modeline            ; snazzy, Atom-inspired modeline, plus API
        nav-flash           ; blink cursor line after big motions
-       opnhints            ; highlight the region an operation acts on
+       ophints            ; highlight the region an operation acts on
        (popup +all +defaults)   ; tame sudden yet inevitable temporary windows
        treemacs            ; a project drawer, like neotree but cooler
        unicode             ; extended unicode support for various languages
