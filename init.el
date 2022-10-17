@@ -29,11 +29,9 @@
 
 ;; come from https://github.com/rbutoi/dotfiles/blob/master/emacs/.doom.d/init.el
 (defconst
-  GLAPTOP
-  (not (not (and IS-LINUX (string-match-p
-                           "roam" (shell-command-to-string "hostname -f"))))))
-(defconst IS-WORK ; has custom coding setup
-  (or GLAPTOP (not (not (string-match-p "google\\|penguin" (system-name))))))
+  IS-WORK
+   (or IS-LINUX (string-match-p
+    "roam" (shell-command-to-string "hostname -f"))))
 
 (defconst IS-PERSONAL (not IS-WORK))
 
@@ -109,6 +107,8 @@
        (cc +lsp)
        (kotlin +lsp)
        (nix +lsp)
+       (:if IS-WORK (javascript +lsp))
+
 
        :config
        (default +bindings +smartparens))

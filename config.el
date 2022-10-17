@@ -27,6 +27,7 @@
     (setq doom-font (font-spec :family "Hack Nerd Font" :size 20))
     )
 
+(when IS-WORK (load-file-from-doomdir  "config_work"))
 
 ;; (setq doom-font (font-spec :family "D2Coding Nerd" :size 12))
 

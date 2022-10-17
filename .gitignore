@@ -110,3 +110,6 @@ Temporary Items
 *.icloud
 
 # End of https://www.toptal.com/developers/gitignore/api/emacs,elisp,macos,linux
+
+config_work.el
+init_linux.el
