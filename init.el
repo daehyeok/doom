@@ -53,14 +53,15 @@
        hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        modeline            ; snazzy, Atom-inspired modeline, plus API
        nav-flash           ; blink cursor line after big motions
-       ophints            ; highlight the region an operation acts on
-       (popup +all +defaults)   ; tame sudden yet inevitable temporary windows
+       ophints             ; highlight the region an operation acts on
+       (popup +all +defaults +hack)   ; tame sudden yet inevitable temporary windows
        treemacs            ; a project drawer, like neotree but cooler
        unicode             ; extended unicode support for various languages
        vc-gutter           ; vcs diff in the fringe
        vi-tilde-fringe     ; fringe tildes to mark beyond EOB
        workspaces          ; tab emulation, persistence & separate workspaces
        (window-select +numbers)
+       tabs
 
        :editor
        (:if (not IS-LINUX)
@@ -74,7 +75,7 @@
        (dired +icons)      ; making dired pretty [functional]
        electric            ; smarter, keyword-based electric-indent
        (ibuffer +icons)    ; interactive buffer management
-       (undo +tree)        ; persistent, smarter undo for your inevitable mistakes
+       (undo +tree)
        vc                  ; version-control and Emacs, sitting in a tree
 
        :term
@@ -88,7 +89,8 @@
         editorconfig)
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
-       lsp
+       ;; (:if IS-MAC
+       ;;     (lsp +eglot))
        magit               ; a git porcelain for Emacs
        direnv
 
@@ -97,17 +99,17 @@
        (tty +osc)          ; improve the terminal Emacs experience
 
        :lang
-       (go +lsp)
+       (go)
        (markdown +syntax)            ; writing docs for people to ignore
        (org +pretty +roam2)               ; organize your plain life in plain text
-       (python +lsp)
+       python
        (sh +syntax)                  ; she sells {ba,z,fi}sh shells on the C xor
        (yaml +syntax)                ; JSON, but readable
-       (rust +lsp)
-       (cc +lsp)
-       (kotlin +lsp)
-       (nix +lsp)
-       (:if IS-WORK (javascript +lsp))
+       (rust)
+       (cc +fish)
+       kotlin
+       (nix)
+       (:if IS-WORK (javascript))
 
 
        :config

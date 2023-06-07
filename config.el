@@ -92,3 +92,29 @@
   (use-package! org-roam
     :init
     (setq org-roam-directory (file-truename "~/org/roam/"))))
+
+
+(use-package! kkp
+  :config
+  (setq kkp-super-modifier 'meta) ;; use this if you want to map the Alt keyboard modifier to Alt in Emacs (and not to Meta)
+  (global-kkp-mode +1))
+
+
+(defun vterm-new ()
+  (interactive)
+  (vterm t)
+  (sleep-for 0.1)
+  (fix-window-size))
+
+(defun fix-window-size ()
+  (interactive)
+  "Change process window size."
+  (when (derived-mode-p 'vterm-mode)
+    (let ((process (get-buffer-process (current-buffer))))
+      (unless (eq nil process)
+        (set-process-window-size process (window-height) (window-width))))))
+
+
+(after! undo-tree
+  (setq undo-tree-visualizer-diff nil)
+)
